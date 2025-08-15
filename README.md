@@ -85,9 +85,6 @@ Ensure you have Rust 1.70+ installed, then:
 [dependencies]
 indubitably-rust-agent-sdk = "0.1.0"
 tokio = { version = "1.0", features = ["full"] }
-
-# Or install via cargo
-cargo add indubitably-rust-agent-sdk
 ```
 
 ## Features at a Glance
