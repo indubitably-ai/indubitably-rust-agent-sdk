@@ -9,9 +9,9 @@
 //! 
 //! #[tokio::main]
 //! async fn main() -> Result<(), Box<dyn std::error::Error>> {
-//!     let agent = Agent::new();
-//!     let response = agent.run("What is the capital of France?").await?;
-//!     println!("Response: {}", response);
+//!     let mut agent = Agent::new().expect("failed to create agent");
+//!     let result = agent.run("What is the capital of France?").await?;
+//!     println!("Response: {}", result.response);
 //!     Ok(())
 //! }
 //! ```

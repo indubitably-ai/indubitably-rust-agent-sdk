@@ -195,6 +195,16 @@ indubitably-cli tools
 indubitably-cli version
 ```
 
+## Examples
+
+See the `examples/` directory for small, focused examples and a README describing how to run them. Quick start:
+
+```bash
+cargo run --example chat_basic
+cargo run --example mcp_list_tools
+cargo run --example multiagent_graph
+```
+
 ## Architecture
 
 The SDK is built with a modular architecture:

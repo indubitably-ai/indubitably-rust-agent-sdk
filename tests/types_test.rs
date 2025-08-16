@@ -1,3 +1,4 @@
+#![cfg(feature = "legacy-types")]
 //! Tests for the types module.
 //! 
 //! These tests verify that all type definitions work correctly

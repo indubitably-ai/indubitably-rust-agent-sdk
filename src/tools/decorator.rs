@@ -15,15 +15,21 @@ use super::registry::Tool;
 /// The function should take a `serde_json::Value` and return a `IndubitablyResult<serde_json::Value>`.
 /// 
 /// # Example
-/// 
+///
 /// ```rust
-/// use indubitably_rust_agent_sdk::tools::tool;
-/// 
-/// #[tool("calculator", "A simple calculator tool")]
-/// fn calculator(input: Value) -> IndubitablyResult<Value> {
-///     // Tool implementation
-///     Ok(Value::String("result".to_string()))
-/// }
+/// use indubitably_rust_agent_sdk::tools::decorator::create_string_tool;
+/// use serde_json::json;
+///
+/// let tool = create_string_tool(
+///     "uppercase",
+///     "Convert text to uppercase",
+///     |input| Ok(input.to_uppercase()),
+/// );
+///
+/// assert_eq!(tool.name, "uppercase");
+/// let result = tool.execute(json!("hello"))?;
+/// assert_eq!(result, json!("HELLO"));
+/// # Ok::<(), indubitably_rust_agent_sdk::types::IndubitablyError>(())
 /// ```
 #[macro_export]
 macro_rules! tool {

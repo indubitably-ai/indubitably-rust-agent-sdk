@@ -6,6 +6,7 @@
 pub mod registry;
 pub mod decorator;
 pub mod executor;
+pub mod mcp;
 
 pub use registry::{Tool, ToolFunction, ToolMetadata};
 pub use executor::ToolExecutionResult;
