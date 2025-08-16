@@ -75,7 +75,6 @@ impl MCPClientConfig {
 }
 
 /// An MCP client that can connect to MCP servers.
-#[derive(Debug)]
 pub struct MCPClient {
     config: MCPClientConfig,
     server_process: Option<tokio::process::Child>,
