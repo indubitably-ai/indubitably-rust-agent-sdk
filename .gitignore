@@ -1,7 +1,13 @@
 # Rust build artifacts
 /target/
+**/target/
 **/*.rs.bk
 *.pdb
+
+# Examples directory build artifacts
+examples/target/
+examples/.cargo/
+examples/**/target/
 
 # Cargo
 # Note: Cargo.lock is committed for applications, not for libraries
@@ -41,3 +47,22 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
+
+# Additional Rust build artifacts
+**/*.o
+**/*.d
+**/*.so
+**/*.dylib
+**/*.dll
+**/*.exe
+**/*.pdb
+**/*.ilk
+**/*.exp
+**/*.lib
+**/*.a
+**/*.rlib
+**/*.rmeta
+**/*.deps
+**/*.incremental/
+**/build/
+**/dist/

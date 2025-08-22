@@ -58,6 +58,163 @@ cd indubitably-rust-agent-sdk
 cargo run --bin indubitably-cli chat "What is the capital of France?"
 ```
 
+## Examples
+
+The SDK includes comprehensive examples demonstrating how to build various types of AI agents and applications. These examples showcase real-world usage patterns and serve as a starting point for your own projects.
+
+### Getting Started with Examples
+
+```bash
+# Navigate to the examples directory
+cd examples
+
+# Build all examples
+cargo build
+
+# Run a specific example
+cargo run --bin simple_chat_assistant
+cargo run --bin multi_agent_system
+cargo run --bin web_chat_interface
+
+# Run all examples sequentially
+./demo.sh
+
+# Run tests to verify examples work correctly
+cargo test
+```
+
+### Available Examples
+
+#### 1. Simple Chat Assistant (`simple_chat_assistant`)
+
+A command-line chat assistant demonstrating basic agent creation and conversation flow:
+
+```bash
+cargo run --bin simple_chat_assistant
+```
+
+**Features:**
+- Interactive command-line chat interface
+- Mock tool implementations (web browser, calculator)
+- Tool specification definitions
+- Basic conversation management
+
+**Use Case:** Perfect for learning the basics of agent creation and tool integration.
+
+#### 2. Multi-Agent System (`multi_agent_system`)
+
+Demonstrates multiple specialized agents working together in a coordinated workflow:
+
+```bash
+cargo run --bin multi_agent_system
+```
+
+**Features:**
+- Research Agent: Gathers information
+- Analysis Agent: Processes and analyzes data
+- Creative Agent: Generates content based on analysis
+- Coordinated workflow execution
+
+**Use Case:** Ideal for complex tasks requiring multiple specialized agents.
+
+#### 3. Web Chat Interface (`web_chat_interface`)
+
+A web-based chat application using Actix-web framework:
+
+```bash
+cargo run --bin web_chat_interface
+```
+
+**Features:**
+- Web-based chat interface
+- Session management
+- RESTful API endpoints
+- Real-time conversation handling
+
+**Use Case:** Building web applications with AI agent integration.
+
+### Example Architecture
+
+Each example demonstrates key SDK concepts:
+
+- **Agent Creation**: Simple agent instantiation and configuration
+- **Tool Integration**: Creating and using custom tools
+- **Message Handling**: Managing conversation flow and history
+- **Multi-Agent Coordination**: Building complex agent workflows
+- **Web Integration**: Deploying agents in web applications
+
+### Running Examples with Scripts
+
+The examples directory includes helpful scripts for automation:
+
+```bash
+# Build and run examples with interactive menu
+./build_and_run.sh
+
+# Guided demonstration of all examples
+./demo.sh
+
+# Quick test run
+./build_and_run.sh test
+```
+
+### Customizing Examples
+
+Examples are designed to be easily customizable:
+
+1. **Modify Tool Implementations**: Replace mock tools with real functionality
+2. **Add New Agents**: Extend multi-agent systems with specialized agents
+3. **Customize Web Interface**: Modify the web chat interface for your needs
+4. **Integrate Real Models**: Connect to actual AI providers (OpenAI, Anthropic, etc.)
+
+### Testing Examples
+
+Comprehensive tests ensure examples work correctly:
+
+```bash
+# Run all tests
+cargo test
+
+# Run specific test suites
+cargo test --test integration_test
+
+# Run tests with verbose output
+cargo test -- --nocapture
+```
+
+**Test Coverage:**
+- Agent creation and configuration
+- Tool specification and metadata
+- Message handling and conversation flow
+- Multi-agent system coordination
+- Web interface functionality
+
+### Example Dependencies
+
+Examples use the following key dependencies:
+
+```toml
+[dependencies]
+indubitably-rust-agent-sdk = { path = ".." }
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+actix-web = "4.0"
+actix-files = "0.6"
+async-trait = "0.1"
+```
+
+### Next Steps
+
+After exploring the examples:
+
+1. **Study the Code**: Understand how each example implements key concepts
+2. **Modify and Extend**: Customize examples for your specific use case
+3. **Build Your Own**: Use examples as templates for your applications
+4. **Contribute**: Improve examples or add new ones for the community
+
+For detailed documentation on each example, see the [examples/README.md](examples/README.md) file.
+
 ## Basic Usage
 
 ```rust

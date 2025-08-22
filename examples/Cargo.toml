@@ -1,0 +1,34 @@
+[package]
+name = "indubitably-examples"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "simple_chat_assistant"
+path = "simple_chat_assistant.rs"
+
+[[bin]]
+name = "multi_agent_system"
+path = "multi_agent_system.rs"
+
+[[bin]]
+name = "web_chat_interface"
+path = "web_chat_interface.rs"
+
+[dependencies]
+# Core SDK
+indubitably-rust-agent-sdk = { path = ".." }
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Web framework (for web_chat_interface)
+actix-web = "4.0"
+actix-files = "0.6"
+
+# Standard library extensions
+async-trait = "0.1"
